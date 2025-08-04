@@ -1,6 +1,21 @@
+import React from "react";
 
-const IngredientList = (props) => {
-  return <ul>// map through props.ingredients</ul>;
+const IngredientList = ({ ingredient }) => {
+
+    const addToBurger = (newIngredient) => {
+        console.log(newIngredient)
+    }
+
+  return (
+    <ul>
+      {ingredient.map((ingredient, index) => (
+        <li style={{ backgroundColor: ingredient.color }} key={index}>
+          {ingredient.name}
+          <button onClick={() => addToBurger({newIngredient})}>+</button>
+        </li>
+      ))}
+    </ul>
+  );
 };
 
 export default IngredientList;

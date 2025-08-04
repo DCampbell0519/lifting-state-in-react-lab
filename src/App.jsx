@@ -4,8 +4,8 @@ import BurgerStack from './components/BurgerStack/BurgerStack';
 import { useState } from 'react';
 
 const App = () => {
-  const [stack, setStack] = useState()
-  
+  const [stack, setStack] = useState([])
+
   const availableIngredients = [
     { name: 'Kaiser Bun', color: 'saddlebrown' },
     { name: 'Sesame Bun', color: 'sandybrown' },
@@ -24,13 +24,17 @@ const App = () => {
   ];
 
   return (
+    <>
     <main>
       <h1>Burger Stacker</h1>
       <section>
-        <IngredientList />
-        <BurgerStack />
+        <IngredientList ingredient={availableIngredients}/>
+        <BurgerStack newIngredient={availableIngredients}/>
       </section>
+    
     </main>
+
+    </>
   );
 };
 
