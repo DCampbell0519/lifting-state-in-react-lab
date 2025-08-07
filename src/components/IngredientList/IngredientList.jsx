@@ -1,17 +1,13 @@
 import React from "react";
 
-const IngredientList = ({ ingredient }) => {
+const IngredientList = ({ ingredient, addToBurger }) => {
 
-    const addToBurger = (newIngredient) => {
-        console.log(newIngredient)
-    }
-
-  return (
+   return (
     <ul>
       {ingredient.map((ingredient, index) => (
         <li style={{ backgroundColor: ingredient.color }} key={index}>
           {ingredient.name}
-          <button onClick={() => addToBurger({newIngredient})}>+</button>
+          <button onClick={() => addToBurger(ingredient)}>+</button>
         </li>
       ))}
     </ul>
